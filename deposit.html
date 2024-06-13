@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deposit</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+        .container h1 {
+            color: #333;
+        }
+        .instructions {
+            text-align: left;
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+        .input-field {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        .btn-confirm {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .btn-confirm:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Deposit Instructions</h1>
+    <div class="instructions">
+        <p>To deposit money into your account using MPESA, follow these steps:</p>
+        <ol>
+            <li>Open the MPESA menu on your phone.</li>
+            <li>Select 'Lipa na MPESA'.</li>
+            <li>Select 'Pay Bill'.</li>
+            <li>Enter the Business Number: <strong>12333</strong>.</li>
+            <li>Enter your Account Number: <strong>Your phone number</strong>.</li>
+            <li>Enter the Amount you want to deposit.</li>
+            <li>Enter your MPESA PIN and confirm the transaction.</li>
+            <li>You will receive a confirmation SMS from MPESA.</li>
+        </ol>
+        <p>Enter the MPESA transaction code below to confirm your deposit:</p>
+        <input type="text" id="mpesaCode" class="input-field" placeholder="MPESA Transaction Code">
+    </div>
+    <button class="btn-confirm" onclick="confirmDeposit()">Confirm Deposit</button>
+    <a href="index.html" class="link">Back to Main Page</a>
+</div>
+
+<script>
+    function confirmDeposit() {
+        const mpesaCode = document.getElementById('mpesaCode').value;
+        if (mpesaCode) {
+            alert(`Your deposit has been confirmed with the MPESA code: ${mpesaCode}. Thank you for your transaction!`);
+        } else {
+            alert('Please enter the MPESA transaction code.');
+        }
+    }
+</script>
+
+</body>
+</html>
